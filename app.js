@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (data && data.length > 0) {
                     const locationKey = data[0].Key;
                     fetchCurrentWeather(locationKey);
-                    fetchDailyForecasts(locationKey, 5); 
+                    fetchDailyForecasts(locationKey, 5);
                     fetchHourlyForecast(locationKey);
                 } else {
                     weatherDiv.innerHTML = `<p>City not found.</p>`;
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const temperature = data.Temperature.Metric.Value;
         const weather = data.WeatherText;
         const weatherContent = `
-            <h2>Current Weather</h2>
+            <h2>Weather</h2>
             <p>Temperature: ${temperature}°C</p>
             <p>Weather: ${weather}</p>
         `;
@@ -84,11 +84,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function displayDailyForecasts(dailyForecasts) {
-        let forecastContent = `<h2>${dailyForecasts.length}-Day Daily Forecasts</h2>`;
+        let forecastContent = `<h2>${dailyForecasts.length} Days Daily Forecasts</h2>`;
         dailyForecasts.forEach(forecast => {
             const date = new Date(forecast.Date);
-            const maxTemperature = forecast.Temperature.Maximum.Value;
-            const minTemperature = forecast.Temperature.Minimum.Value;
             const dayWeather = forecast.Day.IconPhrase;
             const nightWeather = forecast.Night.IconPhrase;
             forecastContent += `
@@ -125,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const weather = hourlyForecast.IconPhrase;
         const dateTime = new Date(hourlyForecast.DateTime);
         const forecastContent = `
-            <h2>Hourly Forecast</h2>
+            <h2>Hourly Forecasts</h2>
             <p>Time: ${dateTime.toLocaleTimeString()}</p>
             <p>Temperature: ${temperature}°C</p>
             <p>Weather: ${weather}</p>

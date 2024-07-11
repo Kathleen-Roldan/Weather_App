@@ -5,7 +5,7 @@ body {
     align-items: center;
     margin: 0;
     padding: 20px;
-    background-color: #f0f8ff;
+    background-color: #975454;
 }
 
 h1 {
@@ -25,14 +25,14 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4caf50;
+    background-color: #C0C0C0;
     color: white;
     border: none;
     border-radius: 5px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #808080;
 }
 
 #weather {
